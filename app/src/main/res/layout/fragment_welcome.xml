@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.welcome.WelcomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_welcome"
+            image="@{@drawable/welcome}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/welcome" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/cloud_top_line"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.27" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_cloud"
+            image="@{@drawable/clouds}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cloud_top_line"
+            tools:src="@drawable/clouds" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/welcome_top_line"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.42" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_line"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_line"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_16dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_welcome"
+            style="@style/App.TextStyle.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8dp"
+            android:text="@string/welcome"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/end_line"
+            app:layout_constraintStart_toStartOf="@id/start_line"
+            app:layout_constraintTop_toTopOf="@id/welcome_top_line" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sign_up"
+            style="@style/App.TextStyle.Body4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8dp"
+            android:text="@string/sign_up"
+            app:layout_constraintEnd_toEndOf="@id/end_line"
+            app:layout_constraintStart_toStartOf="@id/start_line"
+            app:layout_constraintTop_toBottomOf="@id/tv_welcome" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_facebook"
+            style="@style/App.Zero.Inset.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/login_facebook"
+            app:icon="@drawable/ic_facebook"
+            app:iconTint="@color/white"
+            app:iconGravity="end"
+            app:layout_constraintEnd_toEndOf="@id/end_line"
+            app:layout_constraintStart_toStartOf="@id/start_line"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_up" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_email"
+            style="@style/App.Zero.Inset.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/login_email"
+            app:layout_constraintEnd_toEndOf="@id/end_line"
+            app:layout_constraintStart_toStartOf="@id/start_line"
+            app:layout_constraintTop_toBottomOf="@id/btn_facebook" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_crate_account"
+            style="@style/App.Button.Gradient"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/new_account"
+            app:layout_constraintEnd_toEndOf="@id/end_line"
+            app:layout_constraintStart_toStartOf="@id/start_line"
+            app:layout_constraintTop_toBottomOf="@id/btn_email" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

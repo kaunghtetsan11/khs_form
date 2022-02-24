@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Khs-Form</string>
+    <string name="welcome">Welcome to\nReady To Travel</string>
+    <string name="sign_up">Sign up with Facebook for the most\nfulfilling trip planning experience with us!</string>
+    <string name="login_facebook">Log in with Facebook</string>
+    <string name="login_email">Log in with email address</string>
+    <string name="new_account">Create a new account</string>
+    <string name="almost_there">Almost there!</string>
+    <string name="complete_form">Complete the form below to create\nyour Ready To Travel account.</string>
+    <string name="mandatory">*Mandatory</string>
+    <string name="first_name">First Name *</string>
+    <string name="last_name">Last Name *</string>
+    <string name="email_address">Email Address *</string>
+    <string name="dob">Date of Birth *</string>
+    <string name="dob_format">DD/MM/YYYY</string>
+    <string name="nationality">Nationality *</string>
+    <string name="country">Country of Residence *</string>
+    <string name="mobile_no">Mobile no.(Optional)</string>
+    <string name="create_account">Create my account now</string>
+    <string name="success">Success!</string>
+    <string name="account_created">Your account has been created.</string>
+    <string name="text_ok">OK</string>
+
+    <!--Error-->
+    <string name="error_value_required">Value is required.</string>
+    <string name="error_email">Invalid Email Format.</string>
+    <string name="error_date">Invalid Date Format.</string>
+</resources>

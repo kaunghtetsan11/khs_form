@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.newaccount.NewAccountFragment">
+
+    <data>
+
+        <variable
+            name="view_model"
+            type="com.khs.khs_form.form_features.create_account.CreateAccountViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40dp"
+            android:background="?attr/actionBarItemBackground"
+            android:padding="@dimen/_8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_one"
+            style="@style/App.TextStyle.Body3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:background="@color/grey"
+            android:text="@string/almost_there"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_two"
+            style="@style/App.TextStyle.Body4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:background="@color/grey"
+            android:text="@string/complete_form"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_one" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_three"
+            style="@style/App.TextStyle.Body5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@color/grey"
+            android:paddingBottom="@dimen/_16dp"
+            android:text="@string/mandatory"
+            android:textColor="@color/text_grey"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_two" />
+
+        <ScrollView
+            android:id="@+id/ly_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_8dp"
+            android:background="@color/white"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/ly_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_three">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/start_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_16dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/end_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_16dp" />
+
+                <!--First Name-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tl_first_name"
+                    style="@style/App.TextInputLayout"
+                    validate="@{view_model.firstNameValidation}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16dp"
+                    android:hint="@string/first_name"
+                    app:layout_constraintEnd_toEndOf="@id/end_line"
+                    app:layout_constraintStart_toStartOf="@id/start_line"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_first_name"
+                        style="@style/App.EditText"
+                        android:text="@={view_model.firstName}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Last Name-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tl_last_name"
+                    style="@style/App.TextInputLayout"
+                    validate="@{view_model.lastNameValidation}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:hint="@string/last_name"
+                    app:layout_constraintEnd_toEndOf="@id/end_line"
+                    app:layout_constraintStart_toStartOf="@id/start_line"
+                    app:layout_constraintTop_toBottomOf="@id/tl_first_name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_last_name"
+                        style="@style/App.EditText"
+                        android:text="@={view_model.lastName}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Email Address-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tl_email_address"
+                    style="@style/App.TextInputLayout"
+                    validate="@{view_model.emailAddressValidation}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:hint="@string/email_address"
+                    app:layout_constraintEnd_toEndOf="@id/end_line"
+                    app:layout_constraintStart_toStartOf="@id/start_line"
+                    app:layout_constraintTop_toBottomOf="@id/tl_last_name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_email_address"
+                        style="@style/App.EditText"
+                        android:text="@={view_model.emailAddress}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Dob-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tl_dob"
+                    style="@style/App.TextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginEnd="@dimen/_8dp"
+                    android:hint="@string/dob"
+                    app:endIconDrawable="@drawable/dob"
+                    app:endIconMode="custom"
+                    app:endIconTint="@null"
+                    validate="@{view_model.dobValidation}"
+                    app:layout_constraintEnd_toStartOf="@id/rg_Gender"
+                    app:layout_constraintHorizontal_weight="5.5"
+                    app:layout_constraintStart_toStartOf="@id/start_line"
+                    app:layout_constraintTop_toBottomOf="@id/tl_email_address"
+                    app:placeholderText="@string/dob_format"
+                    app:placeholderTextColor="@color/text_grey"
+                    app:placeholderTextAppearance="@style/App.TextAppearance">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_dob"
+                        style="@style/App.EditText"
+                        android:imeOptions="actionDone"
+                        android:text="@={view_model.dob}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Gender-->
+                <RadioGroup
+                    android:id="@+id/rg_Gender"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_48dp"
+                    android:layout_marginStart="@dimen/_8dp"
+                    android:layout_marginTop="@dimen/_8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@id/end_line"
+                    app:layout_constraintHorizontal_weight="4.5"
+                    app:layout_constraintStart_toEndOf="@id/tl_dob"
+                    app:layout_constraintTop_toTopOf="@id/tl_dob"
+                    android:checkedButton="@id/rb_female">
+
+                    <RadioButton
+                        android:id="@+id/rb_female"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_48dp"
+                        android:layout_weight="1"
+                        android:padding="@dimen/_10dp"
+                        android:fontFamily="@font/chivo"
+                        android:textAlignment="center"
+                        android:background="@drawable/btn_segment_left"
+                        android:button="@android:color/transparent"
+                        android:textColor="@drawable/txt_segmented"
+                        android:text="Female"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_male"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/_10dp"
+                        android:fontFamily="@font/chivo"
+                        android:textAlignment="center"
+                        android:background="@drawable/btn_segment_right"
+                        android:button="@android:color/transparent"
+                        android:textColor="@drawable/txt_segmented"
+                        android:text="Male"/>
+                </RadioGroup>
+
+                <!--Nationality-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tl_nationality"
+                    style="@style/App.TextInputLayout.DropDown"
+                    validate="@{view_model.nationalityValidation}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:hint="@string/nationality"
+                    app:hintAnimationEnabled="false"
+                    android:backgroundTint="@color/grey"
+                    app:layout_constraintEnd_toEndOf="@id/end_line"
+                    app:layout_constraintStart_toStartOf="@id/start_line"
+                    app:layout_constraintTop_toBottomOf="@id/tl_dob">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        style="@style/App.AutoComplete"
+                        android:nestedScrollingEnabled="true"
+                        android:textColor="@color/black"
+                        android:text="@={view_model.nationality}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Country-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tl_country"
+                    style="@style/App.TextInputLayout.DropDown"
+                    validate="@{view_model.countryValidation}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:hint="@string/country"
+                    app:hintAnimationEnabled="false"
+                    app:layout_constraintEnd_toEndOf="@id/end_line"
+                    app:layout_constraintStart_toStartOf="@id/start_line"
+                    app:layout_constraintTop_toBottomOf="@id/tl_nationality">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        style="@style/App.AutoComplete"
+                        android:nestedScrollingEnabled="true"
+                        android:textColor="@color/black"
+                        android:text="@={view_model.country}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Mobile No-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tl_mobile_no"
+                    style="@style/App.TextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:hint="@string/mobile_no"
+                    app:layout_constraintEnd_toEndOf="@id/end_line"
+                    app:layout_constraintStart_toStartOf="@id/start_line"
+                    app:layout_constraintTop_toBottomOf="@id/tl_country"
+                    app:prefixTextColor="@color/blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_mobile_no"
+                        style="@style/App.EditText"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone"
+                        android:text="@={view_model.mobileNo}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:id="@+id/vw_focusable"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_16dp"
+                    android:focusableInTouchMode="true"
+                    app:layout_constraintTop_toBottomOf="@id/tl_mobile_no" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            image="@{@drawable/guitar}"
+            android:layout_width="@dimen/_110dp"
+            android:layout_height="120dp"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title_two"
+            tools:src="@drawable/guitar" />
+
+        <FrameLayout
+            android:id="@+id/ly_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_crate_account"
+                style="@style/App.Button.Gradient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16dp"
+                android:text="@string/create_account" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
