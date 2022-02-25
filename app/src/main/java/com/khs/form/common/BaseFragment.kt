@@ -1,4 +1,4 @@
-package com.khs.khs_form.common
+package com.khs.form.common
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import com.khs.khs_form.utils.autoCleared
+import com.khs.form.utils.autoCleared
 
 abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
 

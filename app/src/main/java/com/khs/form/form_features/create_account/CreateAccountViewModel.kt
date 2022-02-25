@@ -1,12 +1,12 @@
-package com.khs.khs_form.form_features.create_account
+package com.khs.form.form_features.create_account
 
 import android.os.Build
 import android.util.Patterns
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.khs.khs_form.R
-import com.khs.khs_form.utils.*
+import com.khs.form.R
+import com.khs.form.utils.*
 
 class CreateAccountViewModel : ViewModel() {
 

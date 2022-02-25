@@ -1,10 +1,10 @@
-package com.khs.khs_form.form_features
+package com.khs.form.form_features
 
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.khs.khs_form.common.BaseActivity
-import com.khs.khs_form.databinding.ActivityMainBinding
+import com.khs.form.common.BaseActivity
+import com.khs.form.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 

@@ -1,4 +1,4 @@
-package com.khs.khs_form
+package com.khs.form
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

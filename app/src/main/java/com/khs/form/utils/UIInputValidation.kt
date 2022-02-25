@@ -1,4 +1,4 @@
-package com.khs.khs_form.utils
+package com.khs.form.utils
 
 import androidx.annotation.StringRes
 

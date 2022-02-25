@@ -6,7 +6,7 @@
     app:startDestination="@id/welcomeFragment">
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.khs.khs_form.form_features.welcome.WelcomeFragment"
+        android:name="com.khs.form.form_features.welcome.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/createAccountFragment"
-        android:name="com.khs.khs_form.form_features.create_account.CreateAccountFragment"
+        android:name="com.khs.form.form_features.create_account.CreateAccountFragment"
         android:label="fragment_new_account"
         tools:layout="@layout/fragment_create_account" />
 </navigation>

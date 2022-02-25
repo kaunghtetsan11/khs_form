@@ -1,4 +1,4 @@
-package com.khs.khs_form.form_features.create_account
+package com.khs.form.form_features.create_account
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,11 +11,11 @@ import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.khs.khs_form.R
-import com.khs.khs_form.common.BaseFragment
-import com.khs.khs_form.databinding.FragmentCreateAccountBinding
-import com.khs.khs_form.utils.autoCleared
-import com.khs.khs_form.utils.hideSoftKeyboard
+import com.khs.form.R
+import com.khs.form.common.BaseFragment
+import com.khs.form.databinding.FragmentCreateAccountBinding
+import com.khs.form.utils.autoCleared
+import com.khs.form.utils.hideSoftKeyboard
 
 class CreateAccountFragment : BaseFragment<FragmentCreateAccountBinding>() {
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.khs.khs_form.utils
+package com.khs.form.utils
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.DefaultLifecycleObserver

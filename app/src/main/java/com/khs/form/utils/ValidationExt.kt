@@ -1,12 +1,12 @@
-package com.khs.khs_form.utils
+package com.khs.form.utils
 
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.khs.khs_form.R
-import com.khs.khs_form.utils.UIInputValidation.*
+import com.khs.form.R
+import com.khs.form.utils.UIInputValidation.*
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.regex.Pattern

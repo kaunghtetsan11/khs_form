@@ -1,4 +1,4 @@
-package com.khs.khs_form.common
+package com.khs.form.common
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -1,4 +1,4 @@
-package com.khs.khs_form.binding
+package com.khs.form.binding
 
 import android.graphics.drawable.Drawable
 import android.net.Uri
@@ -7,9 +7,9 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.google.android.material.textfield.TextInputLayout
-import com.khs.khs_form.R
-import com.khs.khs_form.utils.UIInputValidation
-import com.khs.khs_form.utils.UIInputValidation.*
+import com.khs.form.R
+import com.khs.form.utils.UIInputValidation
+import com.khs.form.utils.UIInputValidation.*
 
 @BindingAdapter(
     value = ["imageUrl", "image", "resImage", "imageUri"],

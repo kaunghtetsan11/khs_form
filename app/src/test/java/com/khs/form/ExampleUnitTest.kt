@@ -1,4 +1,4 @@
-package com.khs.khs_form
+package com.khs.form
 
 import org.junit.Test
 
