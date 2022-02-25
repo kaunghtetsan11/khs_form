@@ -16,6 +16,11 @@ class CreateAccountViewModel : ViewModel() {
     val countries = listOf(
         "Myanmar", "Thailand"
     )
+
+    val phoneCodes = mapOf(
+        "Myanmar" to "+95", "Thailand" to "+66"
+    )
+
     val firstName = MutableLiveData<String?>()
     val lastName = MutableLiveData<String?>()
     val emailAddress = MutableLiveData<String?>()
@@ -23,7 +28,7 @@ class CreateAccountViewModel : ViewModel() {
     val gender = MutableLiveData(0)
     val nationality = MutableLiveData<String?>()
     val country = MutableLiveData<String?>()
-    val countryCode = MutableLiveData<String?>()
+    val phoneCode = MutableLiveData<String?>()
     val mobileNo = MutableLiveData<String?>()
 
     val firstNameValidation = firstName.mapDistinct {
@@ -33,8 +38,9 @@ class CreateAccountViewModel : ViewModel() {
         it.validate()
     }
     val emailAddressValidation = emailAddress.mapDistinct {
-        it.validateWithPattern(R.string.error_email,Patterns.EMAIL_ADDRESS)
+        it.validateWithPattern(R.string.error_email, Patterns.EMAIL_ADDRESS)
     }
+
     @RequiresApi(Build.VERSION_CODES.O)
     val dobValidation = dob.mapDistinct {
         it.validateDate()
@@ -56,5 +62,10 @@ class CreateAccountViewModel : ViewModel() {
             countryValidation to country
         )
     }
+
+    fun setPhoneCode(country : String){
+        phoneCode.value = phoneCodes[country]
+    }
+
     fun validate(): Boolean = validateValues(*validationParams)
 }

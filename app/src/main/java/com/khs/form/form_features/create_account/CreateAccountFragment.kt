@@ -1,6 +1,7 @@
 package com.khs.form.form_features.create_account
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
@@ -40,6 +41,7 @@ class CreateAccountFragment : BaseFragment<FragmentCreateAccountBinding>() {
         view.doOnPreDraw { startPostponedEnterTransition() }
         setListeners()
         setAdapters()
+        setPhoneCodeByCountry()
     }
 
     private fun setListeners() {
@@ -81,6 +83,15 @@ class CreateAccountFragment : BaseFragment<FragmentCreateAccountBinding>() {
             (tlCountry.editText as? AutoCompleteTextView)?.apply {
                 setOnClickListener { vwFocusable.hideSoftKeyboard() }
                 setAdapter(countryAdp)
+            }
+        }
+    }
+
+    private fun setPhoneCodeByCountry()
+    {
+        with(createAccountViewModel){
+            country.observe(viewLifecycleOwner) {
+                setPhoneCode(it!!)
             }
         }
     }
