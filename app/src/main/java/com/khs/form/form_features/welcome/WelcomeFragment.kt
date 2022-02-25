@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.khs.form.R
-import com.khs.form.common.BaseFragment
+import com.khs.form.base.BaseFragment
 import com.khs.form.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>() {

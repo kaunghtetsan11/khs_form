@@ -3,7 +3,7 @@ package com.khs.form.form_features
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.khs.form.common.BaseActivity
+import com.khs.form.base.BaseActivity
 import com.khs.form.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {

@@ -12,7 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.khs.form.R
-import com.khs.form.common.BaseFragment
+import com.khs.form.base.BaseFragment
 import com.khs.form.databinding.FragmentCreateAccountBinding
 import com.khs.form.utils.autoCleared
 import com.khs.form.utils.hideSoftKeyboard

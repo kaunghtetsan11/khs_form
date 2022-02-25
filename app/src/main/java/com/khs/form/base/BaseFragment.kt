@@ -1,4 +1,4 @@
-package com.khs.form.common
+package com.khs.form.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
