@@ -119,7 +119,7 @@
             app:layout_constraintTop_toBottomOf="@id/btn_facebook" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_crate_account"
+            android:id="@+id/btn_create"
             style="@style/App.Button.Gradient"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

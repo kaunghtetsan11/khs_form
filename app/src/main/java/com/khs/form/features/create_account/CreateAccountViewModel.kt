@@ -1,4 +1,4 @@
-package com.khs.form.form_features.create_account
+package com.khs.form.features.create_account
 
 import android.os.Build
 import android.util.Patterns
@@ -17,7 +17,7 @@ class CreateAccountViewModel : ViewModel() {
         "Myanmar", "Thailand"
     )
 
-    val phoneCodes = mapOf(
+    private val phoneCodes = mapOf(
         "Myanmar" to "+95", "Thailand" to "+66"
     )
 

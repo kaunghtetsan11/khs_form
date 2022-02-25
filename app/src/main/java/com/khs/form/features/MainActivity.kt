@@ -1,4 +1,4 @@
-package com.khs.form.form_features
+package com.khs.form.features
 
 import android.os.Bundle
 import android.view.WindowManager

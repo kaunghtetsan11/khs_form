@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App.SplashScreen">
         <activity
-            android:name="com.khs.form.form_features.MainActivity"
+            android:name="com.khs.form.features.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

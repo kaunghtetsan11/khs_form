@@ -8,7 +8,7 @@
 
         <variable
             name="view_model"
-            type="com.khs.form.form_features.create_account.CreateAccountViewModel" />
+            type="com.khs.form.features.create_account.CreateAccountViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +28,7 @@
             app:srcCompat="@drawable/ic_back" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_title_one"
+            android:id="@+id/tv_title"
             style="@style/App.TextStyle.Body3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
             app:layout_constraintTop_toBottomOf="@id/iv_back" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_title_two"
+            android:id="@+id/tv_content"
             style="@style/App.TextStyle.Body4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,10 +52,10 @@
             android:text="@string/complete_form"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_one" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_title_three"
+            android:id="@+id/tv_mandatory"
             style="@style/App.TextStyle.Body5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,10 +68,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_two" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_content" />
 
         <ScrollView
-            android:id="@+id/ly_content"
+            android:id="@+id/ly_scroll"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="@dimen/_8dp"
@@ -80,7 +80,7 @@
             app:layout_constraintBottom_toTopOf="@id/ly_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_three">
+            app:layout_constraintTop_toBottomOf="@+id/tv_mandatory">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -308,7 +308,7 @@
             android:layout_height="120dp"
             android:scaleType="centerInside"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_title_two"
+            app:layout_constraintTop_toTopOf="@id/tv_content"
             tools:src="@drawable/guitar" />
 
         <FrameLayout
@@ -321,7 +321,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_crate_account"
+                android:id="@+id/btn_create"
                 style="@style/App.Button.Gradient"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

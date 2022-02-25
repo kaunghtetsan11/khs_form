@@ -1,7 +1,6 @@
-package com.khs.form.form_features.create_account
+package com.khs.form.features.create_account
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
@@ -20,9 +19,9 @@ import com.khs.form.utils.hideSoftKeyboard
 
 class CreateAccountFragment : BaseFragment<FragmentCreateAccountBinding>() {
 
-    private val createAccountViewModel: CreateAccountViewModel by viewModels()
-    private var nationalityAdp by autoCleared<ArrayAdapter<String>>()
-    private var countryAdp by autoCleared<ArrayAdapter<String>>()
+    private val _viewModel: CreateAccountViewModel by viewModels()
+    private var _adapterNationality by autoCleared<ArrayAdapter<String>>()
+    private var _adapterCountry by autoCleared<ArrayAdapter<String>>()
 
     override fun bindView(inflater: LayoutInflater): FragmentCreateAccountBinding {
         requireActivity().window.setFlags(
@@ -30,7 +29,7 @@ class CreateAccountFragment : BaseFragment<FragmentCreateAccountBinding>() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
         )
         return FragmentCreateAccountBinding.inflate(inflater).apply {
-            viewModel = createAccountViewModel
+            viewModel = _viewModel
             lifecycleOwner = viewLifecycleOwner
         }
     }
@@ -50,13 +49,13 @@ class CreateAccountFragment : BaseFragment<FragmentCreateAccountBinding>() {
             rgGender.setOnCheckedChangeListener { radioGroup,radioButtonID ->
                 val selectedRadioButton = radioGroup.findViewById<RadioButton>(radioButtonID)
                 when (selectedRadioButton.text) {
-                    "Female" -> createAccountViewModel.gender.value = 0
-                    else -> createAccountViewModel.gender.value = 1
+                    "Female" -> _viewModel.gender.value = 0
+                    else -> _viewModel.gender.value = 1
                 }
             }
-            btnCrateAccount.setOnClickListener {
+            btnCreate.setOnClickListener {
                 vwFocusable.requestFocus()
-                if (createAccountViewModel.validate())
+                if (_viewModel.validate())
                     showSuccessDialog()
             }
         }
@@ -66,30 +65,30 @@ class CreateAccountFragment : BaseFragment<FragmentCreateAccountBinding>() {
         val nationalityAdapter = ArrayAdapter(
             requireContext(),
             android.R.layout.simple_list_item_1,
-            createAccountViewModel.nationalities
+            _viewModel.nationalities
         )
-        nationalityAdp = nationalityAdapter
+        _adapterNationality = nationalityAdapter
         val countryAdapter = ArrayAdapter(
             requireContext(),
             android.R.layout.simple_list_item_1,
-            createAccountViewModel.countries
+            _viewModel.countries
         )
-        countryAdp = countryAdapter
+        _adapterCountry = countryAdapter
         with(binding) {
             (tlNationality.editText as? AutoCompleteTextView)?.apply {
                 setOnClickListener { vwFocusable.hideSoftKeyboard() }
-                setAdapter(nationalityAdp)
+                setAdapter(_adapterNationality)
             }
             (tlCountry.editText as? AutoCompleteTextView)?.apply {
                 setOnClickListener { vwFocusable.hideSoftKeyboard() }
-                setAdapter(countryAdp)
+                setAdapter(_adapterCountry)
             }
         }
     }
 
     private fun setPhoneCodeByCountry()
     {
-        with(createAccountViewModel){
+        with(_viewModel){
             country.observe(viewLifecycleOwner) {
                 setPhoneCode(it!!)
             }

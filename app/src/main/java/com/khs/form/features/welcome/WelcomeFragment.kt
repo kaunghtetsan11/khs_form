@@ -1,4 +1,4 @@
-package com.khs.form.form_features.welcome
+package com.khs.form.features.welcome
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,7 +17,7 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding){
-            btnCrateAccount.setOnClickListener {
+            btnCreate.setOnClickListener {
                 findNavController().navigate(R.id.action_welcome_to_createAccount)
             }
         }
